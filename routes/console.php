@@ -16,3 +16,14 @@ Artisan::command('test', function () {
 	$groups1 = \App\Models\Group::all();
 	var_dump($groups0, $groups1);
 });
+
+Artisan::command('password {--s|silent} {string=111}', function(){
+	$pass = $this->argument('string');
+	$hash = Hash::make($pass);
+	if (!$this->option('silent')) {
+		$this->info('Hash for string "' . $pass . '":');
+		$this->info($hash);
+	} else {
+		echo $hash . PHP_EOL;
+	}
+});
