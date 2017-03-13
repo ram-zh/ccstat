@@ -80,12 +80,13 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => env('DB_PG_HOST', '192.168.5.202'),
             'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'database' => env('DB_PG_DATABASE', 'stat'),
+            'username' => env('DB_PG_USERNAME', 'postgres'),
+            'password' => env('DB_PG_PASSWORD', ''),
             'charset' => 'utf8',
+	    'collation' => 'utf8_unicode_ci',
             'prefix' => '',
             'schema' => 'public',
             'sslmode' => 'prefer',
